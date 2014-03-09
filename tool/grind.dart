@@ -14,11 +14,10 @@ void main([List<String> args]) {
 }
 
 void deploy(GrinderContext context) {
-  BUILD_DIR.createSync();
-
-  for (FileSystemEntity file in APP_DIR.listSync()) {
-    if (file is File) {
-      file.copySync('./build');
-    }
+  if (context != null) {
+    context.log("Copy App directory to BUILD directory");
   }
+  BUILD_DIR.deleteSync(recursive: true);
+  BUILD_DIR.createSync();
+  copyDirectory(APP_DIR, BUILD_DIR);
 }
