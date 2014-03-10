@@ -40,7 +40,6 @@ void deploy([GrinderContext context]) {
   BUILD_DIR.createSync();
   copyDirectory(APP_DIR, BUILD_DIR);
 
-  
   _compile(context);
 }
 
