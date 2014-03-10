@@ -1,3 +1,5 @@
+.buildlog
+.settings/
 /build
 /packages
 /tool/packages
