@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-'use strict';
-
+/*
 lib.rtdep('lib.f',
           'hterm');
+*/
 
 // CSP means that we can't kick off the initialization from the html file,
 // so we do it like this instead.
 window.onload = function() {
-  lib.ensureRuntimeDependencies();
+  //lib.ensureRuntimeDependencies();
   hterm.init(Beagle.init);
 };
 
@@ -89,6 +89,7 @@ Beagle.prototype.run = function() {
   var bitrate = Number(this.portInfo_.bitrate);
   var self = this;
 
+/*
   chrome.serial.connect(port, {'bitrate': bitrate}, function(openInfo) {
     self.io.println('Device found ' + port + ' connection Id ' + openInfo.connectionId);
     self.connectionId = openInfo.connectionId;
@@ -100,6 +101,7 @@ Beagle.prototype.run = function() {
       }
     });
   });
+  */
 };
 
 var ab2str=function(buf) {

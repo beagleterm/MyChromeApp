@@ -5,12 +5,12 @@ var ConnectDialog = function() {};
 ConnectDialog.show = function(onComplete) {
   lib.ensureRuntimeDependencies();
   $('a[rel*=leanModal]').leanModal({closeButton: '#connect'});
-  
+
   var $portPicker = $('#port-picker');
   var $bitratePicker = $('#bitrate-picker');
 
   this.loadBitrate();
-  
+
   // Build port picker
   chrome.runtime.getBackgroundPage(function(bgPage) {
     // Notice : chrome.serial.getPorts will not be available from M33.
@@ -58,7 +58,7 @@ ConnectDialog.saveBitrate = function(bitrate) {
   var BITRATE_KEY = 'bit_rate'; //when you change this value, you also must check loadBitrate();
   var obj = {};
   obj[BITRATE_KEY] = bitrate;
-  chrome.storage.local.set(obj);
+//  chrome.storage.local.set(obj);
 };
 
 ConnectDialog.loadBitrate = function() {

@@ -44,10 +44,7 @@ hterm.init = function(opt_onInit) {
     var version = parseInt(ary[1]);
     if (chrome.storage && chrome.storage.sync && version > 21) {
       hterm.defaultStorage = new lib.Storage.Chrome(chrome.storage.sync);
-    } 
-	//  NOTE(sungguk) : localStorage is not allowed at packaged app
-	//  So I removed below code for compatibility
-    //  hterm.defaultStorage = new lib.Storage.Local();
+    }
   }
 
   if (chrome.tabs) {

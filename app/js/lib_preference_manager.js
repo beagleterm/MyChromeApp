@@ -136,8 +136,9 @@ lib.PreferenceManager.prototype.activate = function() {
   if (this.isActive_)
     throw new Error('Already activated');
 
-  this.isActive_ = true;
-  this.storage_.addObserver(this.storageObserver_);
+  //this.isActive_ = true;
+  this.isActive_ = false;
+  //this.storage_.addObserver(this.storageObserver_);
 };
 
 /**
@@ -157,6 +158,7 @@ lib.PreferenceManager.prototype.activate = function() {
  *     has completed.
  */
 lib.PreferenceManager.prototype.readStorage = function(opt_callback) {
+/*
   var pendingChildren = 0;
 
   function onChildComplete() {
@@ -189,6 +191,7 @@ lib.PreferenceManager.prototype.readStorage = function(opt_callback) {
       if (pendingChildren == 0 && opt_callback)
         setTimeout(opt_callback);
     }.bind(this));
+    */
 };
 
 /**
