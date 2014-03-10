@@ -12,9 +12,10 @@ int boundsChange = 100;
  * * http://developer.chrome.com/apps/api_index.html
  */
 void main() {
-  querySelector("#text_id").onClick.listen(resizeWindow);
+//  querySelector("#text_id").onClick.listen(resizeWindow);
 }
 
+/*
 void resizeWindow(MouseEvent event) {
   chrome.Bounds bounds = chrome.app.window.current().getBounds();
 
@@ -25,3 +26,5 @@ void resizeWindow(MouseEvent event) {
 
   boundsChange *= -1;
 }
+
+*/
